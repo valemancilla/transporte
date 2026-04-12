@@ -1,0 +1,146 @@
+using Microsoft.EntityFrameworkCore;
+using transporte.src.modules.assignment_role.Infrastructure.entity;
+using transporte.src.modules.audit_log.Infrastructure.entity;
+using transporte.src.modules.auth_credentials.Infrastructure.entity;
+using transporte.src.modules.auth_sessions.Infrastructure.entity;
+using transporte.src.modules.bids.Infrastructure.entity;
+using transporte.src.modules.chat_messages.Infrastructure.entity;
+using transporte.src.modules.chat_participants.Infrastructure.entity;
+using transporte.src.modules.chat_rooms.Infrastructure.entity;
+using transporte.src.modules.cities_municipalities.Infrastructure.entity;
+using transporte.src.modules.city_pricing_rules.Infrastructure.entity;
+using transporte.src.modules.companies_status.Infrastructure.entity;
+using transporte.src.modules.company_documents.Infrastructure.entity;
+using transporte.src.modules.company_drivers.Infrastructure.entity;
+using transporte.src.modules.company_vehicles.Infrastructure.entity;
+using transporte.src.modules.countries.Infrastructure.entity;
+using transporte.src.modules.credit_transactions.Infrastructure.entity;
+using transporte.src.modules.credit_wallet.Infrastructure.entity;
+using transporte.src.modules.disputes.Infrastructure.entity;
+using transporte.src.modules.dispute_status.Infrastructure.entity;
+using transporte.src.modules.document_category.Infrastructure.entity;
+using transporte.src.modules.documents_customers.Infrastructure.entity;
+using transporte.src.modules.documents_drivers.Infrastructure.entity;
+using transporte.src.modules.documents_status.Infrastructure.entity;
+using transporte.src.modules.documents_vehicles.Infrastructure.entity;
+using transporte.src.modules.drivers.Infrastructure.entity;
+using transporte.src.modules.drivers_vehicles.Infrastructure.entity;
+using transporte.src.modules.loads.Infrastructure.entity;
+using transporte.src.modules.load_details.Infrastructure.entity;
+using transporte.src.modules.load_images.Infrastructure.entity;
+using transporte.src.modules.load_status_history.Infrastructure.entity;
+using transporte.src.modules.message_type.Infrastructure.entity;
+using transporte.src.modules.notification_type.Infrastructure.entity;
+using transporte.src.modules.notifications.Infrastructure.entity;
+using transporte.src.modules.payment_providers.Infrastructure.entity;
+using transporte.src.modules.payment_statuses.Infrastructure.entity;
+using transporte.src.modules.payments.Infrastructure.entity;
+using transporte.src.modules.person_plans.Infrastructure.entity;
+using transporte.src.modules.person_roles.Infrastructure.entity;
+using transporte.src.modules.person_status.Infrastructure.entity;
+using transporte.src.modules.person_transport.Infrastructure.entity;
+using transporte.src.modules.persons.Infrastructure.entity;
+using transporte.src.modules.plans.Infrastructure.entity;
+using transporte.src.modules.price_history.Infrastructure.entity;
+using transporte.src.modules.ratings.Infrastructure.entity;
+using transporte.src.modules.reason_disputes.Infrastructure.entity;
+using transporte.src.modules.return_load_suggestions.Infrastructure.entity;
+using transporte.src.modules.roles.Infrastructure.entity;
+using transporte.src.modules.states_regions.Infrastructure.entity;
+using transporte.src.modules.status_bids.Infrastructure.entity;
+using transporte.src.modules.status_trip.Infrastructure.entity;
+using transporte.src.modules.subscription_status.Infrastructure.entity;
+using transporte.src.modules.subscription_type.Infrastructure.entity;
+using transporte.src.modules.subscriptions.Infrastructure.entity;
+using transporte.src.modules.transaction_types.Infrastructure.entity;
+using transporte.src.modules.transport_companies.Infrastructure.entity;
+using transporte.src.modules.travel_scale.Infrastructure.entity;
+using transporte.src.modules.trip_assignments.Infrastructure.entity;
+using transporte.src.modules.trip_checkpoints.Infrastructure.entity;
+using transporte.src.modules.trip_status_history.Infrastructure.entity;
+using transporte.src.modules.trips.Infrastructure.entity;
+using transporte.src.modules.type_documents.Infrastructure.entity;
+using transporte.src.modules.type_load.Infrastructure.entity;
+using transporte.src.modules.type_vehicles.Infrastructure.entity;
+using transporte.src.modules.vehicles.Infrastructure.entity;
+using transporte.src.modules.vehicles_status.Infrastructure.entity;
+
+namespace transporte.src.shared.context;
+
+public class AppDbContext : DbContext
+{
+    public DbSet<AssignmentEntity> AssignmentRoles => Set<AssignmentEntity>();
+    public DbSet<AuditLogEntity> AuditLogs => Set<AuditLogEntity>();
+    public DbSet<AuthCredentialsEntity> AuthCredentials => Set<AuthCredentialsEntity>();
+    public DbSet<AuthSessionsEntity> AuthSessions => Set<AuthSessionsEntity>();
+    public DbSet<BidsEntity> Bids => Set<BidsEntity>();
+    public DbSet<ChatMessagesEntity> ChatMessages => Set<ChatMessagesEntity>();
+    public DbSet<ChatParticipantsEntity> ChatParticipants => Set<ChatParticipantsEntity>();
+    public DbSet<ChatRoomsEntity> ChatRooms => Set<ChatRoomsEntity>();
+    public DbSet<CitiesMunicipalitiesEntity> CitiesMunicipalities => Set<CitiesMunicipalitiesEntity>();
+    public DbSet<CityPricingRulesEntity> CityPricingRules => Set<CityPricingRulesEntity>();
+    public DbSet<CompaniesStatusEntity> CompaniesStatuses => Set<CompaniesStatusEntity>();
+    public DbSet<CompanyDocumentsEntity> CompanyDocuments => Set<CompanyDocumentsEntity>();
+    public DbSet<CompanyDriversEntity> CompanyDrivers => Set<CompanyDriversEntity>();
+    public DbSet<CompanyVehiclesEntity> CompanyVehicles => Set<CompanyVehiclesEntity>();
+    public DbSet<CountriesEntity> Countries => Set<CountriesEntity>();
+    public DbSet<CreditTransactionsEntity> CreditTransactions => Set<CreditTransactionsEntity>();
+    public DbSet<CreditWalletEntity> CreditWallets => Set<CreditWalletEntity>();
+    public DbSet<DisputesEntity> Disputes => Set<DisputesEntity>();
+    public DbSet<DisputeStatusEntity> DisputeStatuses => Set<DisputeStatusEntity>();
+    public DbSet<DocumentCategoryEntity> DocumentCategories => Set<DocumentCategoryEntity>();
+    public DbSet<DocumentsCustomersEntity> DocumentsCustomers => Set<DocumentsCustomersEntity>();
+    public DbSet<DocumentsDriversEntity> DocumentsDrivers => Set<DocumentsDriversEntity>();
+    public DbSet<DocumentsStatusEntity> DocumentsStatuses => Set<DocumentsStatusEntity>();
+    public DbSet<DocumentsVehiclesEntity> DocumentsVehicles => Set<DocumentsVehiclesEntity>();
+    public DbSet<DriversEntity> Drivers => Set<DriversEntity>();
+    public DbSet<DriversVehiclesEntity> DriversVehicles => Set<DriversVehiclesEntity>();
+    public DbSet<LoadsEntity> Loads => Set<LoadsEntity>();
+    public DbSet<LoadDetailsEntity> LoadDetails => Set<LoadDetailsEntity>();
+    public DbSet<LoadImagesEntity> LoadImages => Set<LoadImagesEntity>();
+    public DbSet<LoadStatusHistoryEntity> LoadStatusHistories => Set<LoadStatusHistoryEntity>();
+    public DbSet<MessageTypeEntity> MessageTypes => Set<MessageTypeEntity>();
+    public DbSet<NotificationTypeEntity> NotificationTypes => Set<NotificationTypeEntity>();
+    public DbSet<NotificationsEntity> Notifications => Set<NotificationsEntity>();
+    public DbSet<PaymentProvidersEntity> PaymentProviders => Set<PaymentProvidersEntity>();
+    public DbSet<PaymentStatusesEntity> PaymentStatuses => Set<PaymentStatusesEntity>();
+    public DbSet<PaymentsEntity> Payments => Set<PaymentsEntity>();
+    public DbSet<PersonPlansEntity> PersonPlans => Set<PersonPlansEntity>();
+    public DbSet<PersonRolesEntity> PersonRoles => Set<PersonRolesEntity>();
+    public DbSet<PersonStatusEntity> PersonStatuses => Set<PersonStatusEntity>();
+    public DbSet<PersonTransportEntity> PersonTransports => Set<PersonTransportEntity>();
+    public DbSet<PersonsEntity> Persons => Set<PersonsEntity>();
+    public DbSet<PlansEntity> Plans => Set<PlansEntity>();
+    public DbSet<PriceHistoryEntity> PriceHistories => Set<PriceHistoryEntity>();
+    public DbSet<RatingsEntity> Ratings => Set<RatingsEntity>();
+    public DbSet<ReasonDisputesEntity> ReasonDisputes => Set<ReasonDisputesEntity>();
+    public DbSet<ReturnLoadSuggestionsEntity> ReturnLoadSuggestions => Set<ReturnLoadSuggestionsEntity>();
+    public DbSet<RolesEntity> Roles => Set<RolesEntity>();
+    public DbSet<StatesRegionsEntity> StatesRegions => Set<StatesRegionsEntity>();
+    public DbSet<StatusBidsEntity> StatusBids => Set<StatusBidsEntity>();
+    public DbSet<StatusTripEntity> StatusTrips => Set<StatusTripEntity>();
+    public DbSet<SubscriptionStatusEntity> SubscriptionStatuses => Set<SubscriptionStatusEntity>();
+    public DbSet<SubscriptionTypeEntity> SubscriptionTypes => Set<SubscriptionTypeEntity>();
+    public DbSet<SubscriptionsEntity> Subscriptions => Set<SubscriptionsEntity>();
+    public DbSet<TransactionTypesEntity> TransactionTypes => Set<TransactionTypesEntity>();
+    public DbSet<TransportCompaniesEntity> TransportCompanies => Set<TransportCompaniesEntity>();
+    public DbSet<TravelScaleEntity> TravelScales => Set<TravelScaleEntity>();
+    public DbSet<TripAssignmentEntity> TripAssignments => Set<TripAssignmentEntity>();
+    public DbSet<TripCheckpointsEntity> TripCheckpoints => Set<TripCheckpointsEntity>();
+    public DbSet<TripStatusHistoryEntity> TripStatusHistories => Set<TripStatusHistoryEntity>();
+    public DbSet<TripsEntity> Trips => Set<TripsEntity>();
+    public DbSet<TypeDocumentsEntity> TypeDocuments => Set<TypeDocumentsEntity>();
+    public DbSet<TypeLoadEntity> TypeLoads => Set<TypeLoadEntity>();
+    public DbSet<TypeVehiclesEntity> TypeVehicles => Set<TypeVehiclesEntity>();
+    public DbSet<VehiclesEntity> Vehicles => Set<VehiclesEntity>();
+    public DbSet<VehiclesStatusEntity> VehiclesStatuses => Set<VehiclesStatusEntity>();
+
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    {
+    }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+    }
+}
